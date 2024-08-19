@@ -1,17 +1,20 @@
 from turtle import Turtle, Screen
+import random
 
 turtle = Turtle()
-turtle.shape("turtle")
-turtle.color("red", "green")
+# turtle.shape("turtle")
+# turtle.color("red", "green")
 
 # draw triangle, square, pentagon, hxagon, heptagon, octagon, nonagon, decagon using turtle
-initialMoves = 100
-shapeMoves = initialMoves
-turtle.forward(initialMoves)
+colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink", "brown", "black", "gold", "chartreuse", "blue violet"]
+def drawShape(shapesides):
+    angle = 360 / shapesides
+    for i in range(shapesides):
+        turtle.forward(100)
+        turtle.left(angle)
 for i in range(3, 11):
-    for j in range(i):
-        turtle.left(360 / i)
-        turtle.forward(initialMoves)
+    turtle.color(random.choice(colors))
+    drawShape(i)
 
 
 myScreen = Screen()
